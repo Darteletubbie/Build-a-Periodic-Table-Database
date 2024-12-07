@@ -15,8 +15,7 @@ EXIST_ELEMENT=$($PSQL "SELECT atomic_mass FROM properties FULL JOIN elements USI
   then
   echo I could not find that element in the database.
   else
-
-echo $EXIST_ELEMENT
+  
 # get atomic_number
 ATOMIC_NUMBER=$($PSQL "SELECT atomic_number FROM elements WHERE atomic_number = $ARG OR symbol = '$ARG' OR name = '$ARG'")
 # get name
